@@ -9,12 +9,3 @@ body {
   color: #222;
   font-family: Arial, sans-serif;
 }
-
-function Home() {
-  return (
-    <div style={{ padding: "40px" }}>
-      <h1>Welcome to ShopPro</h1>
-      <p>Start exploring products now.</p>
-    </div>
-  );
-}
