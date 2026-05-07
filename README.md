@@ -155,7 +155,7 @@ Use tools like Postman to test endpoints.
 ## 📸 Screenshots 
 
 * [Home](screenshots/Home.png)
-* [Login](screenshots/Login Page.png)
+* [Login Page](screenshots/Login Page.png)
 * [Cart](screenshots/Cart.png)
 * [Products](screenshots/Products.png)
 
