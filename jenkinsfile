@@ -1,0 +1,54 @@
+pipeline {
+    agent any
+
+    tools {
+        nodejs 'nodejs'
+    }
+
+    stages {
+
+        stage('Clone') {
+            steps {
+                git 'https://github.com/YARAMASI-RAVI/E-Commerce-Website.git'
+            }
+        }
+
+        stage('Frontend Install') {
+            steps {
+                dir('client') {
+                    sh 'npm install'
+                }
+            }
+        }
+
+        stage('Frontend Build') {
+            steps {
+                dir('client') {
+                    sh 'npm run build'
+                }
+            }
+        }
+
+        stage('Backend Install') {
+            steps {
+                dir('server') {
+                    sh 'npm install'
+                }
+            }
+        }
+
+        stage('SonarQube Scan') {
+            steps {
+                echo 'SonarQube scanning...'
+            }
+        }
+
+        stage('Run Backend') {
+            steps {
+                dir('server') {
+                    sh 'nohup node server.js &'
+                }
+            }
+        }
+    }
+}
